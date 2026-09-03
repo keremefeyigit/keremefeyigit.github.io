@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerem Efe Yiğit | Software Developer & Portfolio</title>
+    <meta name="description" content="Kerem Efe Yiğit - Yazılım Geliştirici Portfolio. Web geliştirme, yapay zeka, bilgisayarlı görü ve oyun projeleri.">
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --card-bg: rgba(18, 24, 38, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #6366f1;
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --accent-cyan: #06b6d4;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 85% 70%, rgba(168, 85, 247, 0.12) 0%, transparent 50%);
+        }
+
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .hero {
+            max-width: 1000px;
+            margin: 4rem auto 6rem;
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #818cf8;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: #fff;
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Projects Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .projects-grid {
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            padding: 0 1.5rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(99, 102, 241, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #818cf8;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #818cf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: gap 0.2s;
+        }
+
+        .project-link:hover {
+            gap: 0.7rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">KEY.dev</div>
+        <nav>
+            <a href="#projects">Projeler</a>
+            <a href="https://github.com/keremefeyigit" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <span class="badge"><i class="fas fa-code"></i> Yazılım Geliştirici & Mühendis</span>
+            <h1>Merhaba, Ben <span>Kerem Efe Yiğit</span></h1>
+            <p>Web geliştirme, yapay zeka, bilgisayarlı görü (Computer Vision) ve etkileşimli HTML5 uygulamaları üzerine odaklanan projeler üretiyorum.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> Projeleri İncele</a>
+                <a href="https://github.com/keremefeyigit" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub Profilim</a>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-title">
+                <h2>Öne Çıkan Projeler</h2>
+            </div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-icon"><i class="fas fa-building"></i></div>
+                        <h3>Apartman Yönetim Sistemi</h3>
+                        <p>Daire sahipleri, aidat takibi ve apartman giderleri için geliştirilmiş Express.js & SQLite tabanlı RESTful web platformu.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">SQLite3</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/keremefeyigit/Apartman-Yonetim-Sistemi" target="_blank" class="project-link">Incele <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-icon"><display-icon><i class="fas fa-eye"></i></display-icon></div>
+                        <h3>Pano Hesaplama Sistemi</h3>
+                        <p>YOLOv8 ve derin öğrenme modelleri kullanarak reklam panolarının nesne tespiti, mesafe hesabı ve segmentasyon analizi.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/keremefeyigit/PanoHesaplamaSistemi" target="_blank" class="project-link">Incele <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-icon"><i class="fas fa-language"></i></div>
+                        <h3>YDS İngilizce Kelime Oyunu</h3>
+                        <p>YDS ve akademik İngilizce sınavlarına hazırlananlar için özel kelime kartları ve interaktif sınav simülatörü.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Vite</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/keremefeyigit/IngilizceOyunum" target="_blank" class="project-link">Incele <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-icon"><i class="fas fa-gamepad"></i></div>
+                        <h3>HTML5 Roket & Radar Oyunu</h3>
+                        <p>HTML5 Canvas ve matematiksel fizik motoru ile geliştirilmiş gerçek zamanlı radar taraması ve hedef kilitlenme simülasyonu.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5 Canvas</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Physics</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/keremefeyigit/roket-oyunu" target="_blank" class="project-link">Incele <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-icon"><i class="fas fa-cat"></i></div>
+                        <h3>Sabıkalı Patiler</h3>
+                        <p>Kullanıcı dostu arayüzü ve akıcı animasyonları ile hazırlanan Vanilla HTML/CSS tabanlı interaktif web oyunu.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Vanilla JS</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/keremefeyigit/sabikali-patiler" target="_blank" class="project-link">Incele <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <div class="project-icon"><i class="fas fa-globe"></i></div>
+                        <h3>Tarf Web Platformu</h3>
+                        <p>Dinamik içerik yönetimi ve performans odaklı mimarisiyle modern kurumsal web projesi.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Web Design</span>
+                            <span class="tech-tag">Frontend</span>
+                            <span class="tech-tag">UI/UX</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/keremefeyigit/Tarf-Web-Sitesi" target="_blank" class="project-link">Incele <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kerem Efe Yiğit. Tüm hakları saklıdır. GitHub Pages üzerinde barındırılmaktadır.</p>
+    </footer>
+
+</body>
+</html>
