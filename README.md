@@ -32,7 +32,7 @@ Yüksek eşzamanlılıklı ve güvenlik hassasiyeti bulunan kurumsal web platfor
 
 | Kategori | Teknolojiler & Kütüphaneler |
 | :--- | :--- |
-| **Yazılım Dilleri** | Python, TypeScript, JavaScript (ES6+), PHP (8.4), R, SQL, C/C++ temelleri, HTML5 & CSS3 |
+| **Yazılım Dilleri** | Python, TypeScript, JavaScript (ES6+), PHP (8.4), R, SQL, HTML5 & CSS3 |
 | **Backend & API** | PHP MVC & Service Layer, Node.js, Express.js, FastAPI, RESTful API Tasarımı, JWT, HMAC-SHA256, BCRYPT, Rate-Limiting |
 | **Yapay Zeka & Görü** | YOLOv8 (Segmentation / Detection), OpenCV, PyTorch, Google Gemini 2.5 Flash API, Stereo Vision, NLP & Sentiment Analizi |
 | **Frontend & Mobil** | React 19, Vite, Capacitor (Android/iOS), HTML5 Canvas, Tailwind CSS, Bootstrap 5, ES Modules |
@@ -42,21 +42,9 @@ Yüksek eşzamanlılıklı ve güvenlik hassasiyeti bulunan kurumsal web platfor
 
 ---
 
-## 💼 Öne Çıkan Projeler (Featured Projects)
+## 💼 Projeler & Sistemler (Projects & Systems)
 
-### 1. 🍽️ [YEMEDENÖNCE](https://github.com/keremefeyigit/yemedenonce)
-> **"Ne yemek istediğini hızlıca seç. Botlardan arındırılmış, gerçek esnaf lezzetleri."**
-- **Teknolojiler:** `React 19`, `TypeScript`, `Bun`, `Google Gemini 2.5 Flash`, `H3 Coğrafi İndeksleme`, `Supabase`, `Capacitor`
-- **Özet:** Google Maps ve yemek sipariş platformlarının manipüle edilmiş reklam algoritmalarından bağımsız gastronomi keşif platformu.
-- **Teknik Özellikler:**
-  - Gemini 2.5 Flash ile mekan yorumları üzerinde çok dilli duygu analizi ve güvenilirlik puanlama.
-  - Uber H3 altıgen coğrafi indeksleme ile mekansal kümeleme ve hızlı yerel tarama.
-  - Bayesyen güven skoru (0-100) formülasyonu ile bot yorumlarını filtreleyen mekan sıralaması.
-  - Capacitor ile paketlenmiş mobil mağaza uygulaması ve saatlik partili CI/CD veri tarama hattı.
-
----
-
-### 2. 🎯 [Pano Hesaplama Sistemi (Akıllı Tabela)](https://github.com/keremefeyigit/PanoHesaplamaSistemi)
+### 1. 🎯 [Pano Hesaplama Sistemi (Akıllı Tabela)](https://github.com/keremefeyigit/PanoHesaplamaSistemi) `Açık Kaynak`
 > **Kentsel reklam alanlarının yönetiminde dijital dönüşüm: OpenCV ve Yapay Zeka destekli analiz ekosistemi.**
 - **Teknolojiler:** `Python`, `YOLOv8 Segmentation`, `OpenCV`, `FastAPI`, `PyTorch`, `Docker`
 - **Özet:** Belediye ve kamu kurumlarının kentsel reklam panolarını milimetrik hassasiyetle denetlemesini sağlayan uçtan uca bilgisayarlı görü sistemi.
@@ -67,8 +55,20 @@ Yüksek eşzamanlılıklı ve güvenlik hassasiyeti bulunan kurumsal web platfor
 
 ---
 
-### 3. 🏛️ [ASÜ Topluluk Yönetim Platformu (ASÜConnect)](https://github.com/keremefeyigit/topluluklar-lastest)
-> **Üniversite öğrenci toplulukları, etkinlik onayları ve biletleme için kurumsal yönetim platformu.**
+### 2. 🍽️ YEMEDENÖNCE `Özel Girişim / Ticari MVP`
+> **"Ne yemek istediğini hızlıca seç. Botlardan arındırılmış, gerçek esnaf lezzetleri."** *(Kaynak kodları gizlilik sözleşmesi gereği özel depodadır)*
+- **Teknolojiler:** `React 19`, `TypeScript`, `Bun`, `Google Gemini 2.5 Flash`, `H3 Coğrafi İndeksleme`, `Supabase`, `Capacitor`
+- **Özet:** Google Maps ve yemek sipariş platformlarının manipüle edilmiş reklam algoritmalarından bağımsız gastronomi keşif platformu.
+- **Teknik Özellikler:**
+  - Gemini 2.5 Flash ile mekan yorumları üzerinde çok dilli duygu analizi ve güvenilirlik puanlama.
+  - Uber H3 altıgen coğrafi indeksleme ile mekansal kümeleme ve hızlı yerel tarama.
+  - Bayesyen güven skoru (0-100) formülasyonu ile bot yorumlarını filtreleyen mekan sıralaması.
+  - Capacitor ile paketlenmiş mobil mağaza uygulaması ve saatlik partili CI/CD veri tarama hattı.
+
+---
+
+### 3. 🏛️ ASÜ Topluluk Yönetim Platformu (ASÜConnect) `Kurumsal / Üniversite İçi`
+> **Üniversite öğrenci toplulukları, etkinlik onayları ve biletleme için kurumsal yönetim platformu.** *(Üniversite içi kurumsal depodur)*
 - **Teknolojiler:** `PHP 8.4`, `MySQL/MariaDB (49 Tablo)`, `Custom MVC`, `HMAC-SHA256`, `Bootstrap 5`
 - **Özet:** Aksaray Üniversitesi genelindeki onlarca öğrenci topluluğunun idari ve operasyonel süreçlerini dijitalleştiren kurumsal LAMP mimarisi.
 - **Teknik Özellikler:**
@@ -78,7 +78,17 @@ Yüksek eşzamanlılıklı ve güvenlik hassasiyeti bulunan kurumsal web platfor
 
 ---
 
-### 4. 🤖 [Agent Ofisi (Agent Köyü)](https://github.com/keremefeyigit)
+### 4. 🏢 [Apartman Yönetim Sistemi](https://github.com/keremefeyigit/Apartman-Yonetim-Sistemi) `Açık Kaynak`
+> **Modern konut ve apartman yönetimleri için güvenli RESTful web platformu.**
+- **Teknolojiler:** `Node.js`, `Express.js`, `SQLite3`, `JWT`, `Security Hardening (Helmet, Rate-Limit)`
+- **Özet:** Daire sakinleri, aidat takipleri ve apartman gelir-gider süreçlerini otomatize eden RESTful API servisi.
+- **Teknik Özellikler:**
+  - JWT tabanlı kimlik doğrulama ve rol yetkilendirmesi.
+  - Brute-force ve DoS saldırılarına karşı IP bazlı rate limiting ve katı güvenlik başlıkları.
+
+---
+
+### 5. 🤖 Agent Ofisi (Agent Köyü) `Özel Ar-Ge Mimarisi`
 > **Kendi bilgisayarında çalışan otonom çoklu LLM ajan orkestrasyon sistemi.**
 - **Teknolojiler:** `Python`, `Multi-Agent System`, `hcom Protocol`, `Claude & agy CLI Integration`, `CI/CD Automation`
 - **Özet:** Birden fazla yapay zeka ajanının (Sağ Kol, Bekçi, Defterdar, Test Ustası, Kaşif) eşgüdümlü çalışmasını sağlayan yerel yönetim mimarisi.
@@ -89,41 +99,28 @@ Yüksek eşzamanlılıklı ve güvenlik hassasiyeti bulunan kurumsal web platfor
 
 ---
 
-### 5. 🏢 [Apartman Yönetim Sistemi](https://github.com/keremefeyigit/Apartman-Yonetim-Sistemi)
-> **Modern konut ve apartman yönetimleri için güvenli RESTful web platformu.**
-- **Teknolojiler:** `Node.js`, `Express.js`, `SQLite3`, `JWT`, `Security Hardening (Helmet, Rate-Limit)`
-- **Özet:** Daire sakinleri, aidat takipleri ve apartman gelir-gider süreçlerini otomatize eden RESTful API servisi.
-- **Teknik Özellikler:**
-  - JWT tabanlı kimlik doğrulama ve rol yetkilendirmesi.
-  - Brute-force ve DoS saldırılarına karşı IP bazlı rate limiting ve katı güvenlik başlıkları.
-
----
-
-### 6. 🤝 [USİP - Üniversite-Sanayi İşbirliği Portalı](https://github.com/keremefeyigit/usipp)
+### 6. 🤝 USİP - Üniversite-Sanayi İşbirliği Portalı `B2B Kurumsal Proje`
 > **Akademi ve sanayiyi buluşturan B2B/B2C entegre istihdam ve AR-GE platformu.**
 - **Teknolojiler:** `PHP (Native Core)`, `Custom MVC`, `MySQL`, `Vanilla JS`, `Bootstrap 5`
 - **Özet:** TTO, Kariyer Merkezleri, akademisyenler, öğrenciler ve sanayi firmalarını tek çatı altında toplayan web portalı.
 
 ---
 
-### 7. 🎮 [Kalite Elçisi · Görsel Roman Motoru](https://github.com/keremefeyigit)
-> **YÖKAK kalite standartlarını oyunlaştıran modüler görsel roman oyun motoru.**
-- **Teknolojiler:** `Vanilla JavaScript`, `Modern ES Modülleri`, `JSON Engine`, `Fetch API`
-- **Özet:** Öğrenci merkezli eğitim ve kalite süreçlerini interaktif diyaloglarla öğreten, derleme gerektirmeyen saf web motoru.
+### 7. 🚀 [HTML5 Roket & Radar Simülasyonu](https://github.com/keremefeyigit/Roket-Oyunu) `Açık Kaynak`
+> **HTML5 Canvas ve matematiksel fizik motoru ile gerçek zamanlı radar taraması ve balistik simülasyon oyunu.**
+- **Teknolojiler:** `HTML5 Canvas`, `JavaScript`, `Physics Engine`, `Geometry`
 
 ---
 
-### 8. ⚡ [İŞKUR Portal Otomasyon Botu](https://github.com/keremefeyigit)
-> **Excel verilerini devlet portalına aktaran Python otomasyon aracı.**
-- **Teknolojiler:** `Python`, `Selenium`, `openpyxl`, `Web Scraping`
-- **Özet:** Çoklu şube yoklama listelerini otomatik TC eşleştirme ve sayfa navigasyonu ile İŞKUR Portal devam çizelgesine işleyen bot sistemi.
+### 8. 🐱 [Sabıkalı Patiler](https://github.com/keremefeyigit/Sabikali-Patiler) `Açık Kaynak`
+> **Kullanıcı dostu arayüzü ve akıcı CSS animasyonları ile hazırlanan interaktif web oyunu.**
+- **Teknolojiler:** `HTML5`, `CSS3 Animations`, `Vanilla JavaScript`
 
 ---
 
-### 9. 📊 [Savunma Harcaması Veri Analizi](https://github.com/keremefeyigit)
+### 9. 📊 [Savunma Harcaması Veri Analizi](https://yusakru.github.io/asu-savunma-harcamas--veriGorsel/) `Canlı Analiz Raporu`
 > **SIPRI ve Dünya Bankası verilerini birleştiren sosyoekonomik görselleştirme.**
 - **Teknolojiler:** `R (4.x)`, `ggcorrplot`, `Spearman Correlation`, `ggplot2`
-- **Özet:** Askeri harcamalar ile makroekonomik parametrelerin ilişkisini Spearman korelogramı ve dumbbell grafikleriyle ortaya koyan veri bilimi çalışması.
 
 ---
 
