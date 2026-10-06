@@ -3,7 +3,7 @@
 # 🚀 Kerem Efe Yiğit
 ### Full-Stack Software Developer & AI / Computer Vision Engineer
 
-[![Website](https://img.shields.io/badge/Website-keremefeyigit.me-6366f1?style=for-the-badge&logo=google-chrome&logoColor=white)](https://keremefeyigit.github.io)
+[![Website](https://img.shields.io/badge/Website-keremefeyigit.github.io-6366f1?style=for-the-badge&logo=google-chrome&logoColor=white)](https://keremefeyigit.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-kerem--efe--yiğit-0077b5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kerem-efe-yi%C4%9Fit/)
 [![GitHub](https://img.shields.io/badge/GitHub-keremefeyigit-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/keremefeyigit)
 [![Email](https://img.shields.io/badge/Email-keremefeyigit%40outlook.com-EA4335?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:keremefeyigit@outlook.com)
@@ -138,7 +138,7 @@ Yüksek eşzamanlılıklı ve güvenlik hassasiyeti bulunan kurumsal web platfor
 
 ## 📬 İletişim & Bağlantılar
 
-- 🌐 **Kişisel Web Sitesi:** [keremefeyigit.me](http://keremefeyigit.me) / [keremefeyigit.github.io](https://keremefeyigit.github.io)
+- 🌐 **Kişisel Web Sitesi:** [keremefeyigit.github.io](https://keremefeyigit.github.io)
 - 💼 **LinkedIn:** [linkedin.com/in/kerem-efe-yiğit](https://www.linkedin.com/in/kerem-efe-yi%C4%9Fit/)
 - 💻 **GitHub:** [@keremefeyigit](https://github.com/keremefeyigit)
 - 📧 **E-Posta:** [keremefeyigit@outlook.com](mailto:keremefeyigit@outlook.com)
