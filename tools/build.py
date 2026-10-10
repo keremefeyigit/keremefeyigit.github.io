@@ -58,7 +58,7 @@ def page(L):
         for g, items in C.SKILLS)
     n = {k: i for i, (k, _) in enumerate(L["nav"], 1)}
     other_lang = "en" if L["lang"] == "tr" else "tr"
-    return f"""<!doctype html>
+    return f"""<!DOCTYPE html>
 <html lang="{L['lang']}">
 <head>
 <meta charset="utf-8">
@@ -164,7 +164,7 @@ def page(L):
 
 
 def not_found():
-    return f"""<!doctype html>
+    return f"""<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="utf-8">
