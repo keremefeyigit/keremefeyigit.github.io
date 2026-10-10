@@ -34,7 +34,6 @@ PROJECTS = [
          tags=["HTML5", "CSS3", "Vanilla JS"],
          links=[("play", "https://keremefeyigit.github.io/Sabikali-Patiler/"), ("repo", GITHUB + "/Sabikali-Patiler")]),
     dict(id="kalite", featured=False, visibility="corporate", tags=["Vanilla JS", "ES Modules", "JSON"], links=[]),
-    dict(id="iskur", featured=False, visibility="private", tags=["Python", "Selenium", "openpyxl"], links=[]),
     dict(id="savunma", featured=False, visibility="open", tags=["R", "ggcorrplot", "Spearman"],
          links=[("report", REPORT)]),
 ]
@@ -94,7 +93,6 @@ TR = dict(
         roket=("Roket & Radar Simülasyonu", "HTML5 Canvas ve 2D fizik ile gerçek zamanlı radar taraması, hedef kilitleme ve balistik uçuş."),
         sabikali=("Sabıkalı Patiler", "İpuçlarını birleştirerek suçluyu bulduğunuz, saf JavaScript ile yazılmış tek dosyalık dedektiflik oyunu."),
         kalite=("Kalite Elçisi", "YÖKAK kalite güvence standartlarını interaktif senaryolarla öğreten, tarayıcının ES modülleriyle çalışan bağımlılıksız oyun motoru."),
-        iskur=("İŞKUR Portal Otomasyon Botu", "Excel yoklama verilerini İŞKUR portalındaki devam çizelgelerine eşleyen ve 40+ sayfayı aktaran Python otomasyonu."),
         savunma=("Savunma Harcaması Veri Analizi", "SIPRI askeri harcamaları ile Dünya Bankası göstergelerini birleştiren korelogram, dumbbell ve boxplot görselleştirmeleri (R)."),
     ),
 )
@@ -147,7 +145,6 @@ EN = dict(
         roket=("Rocket & Radar Simulation", "Real-time radar sweep, target lock and ballistic flight with HTML5 Canvas and 2D physics."),
         sabikali=("Sabıkalı Patiler", "A single-file detective game in plain JavaScript where you combine clues to find the culprit."),
         kalite=("Quality Ambassador", "Dependency-free game engine running on native ES modules that teaches YÖKAK quality-assurance standards through interactive scenarios."),
-        iskur=("İŞKUR Portal Automation Bot", "Python automation that maps Excel attendance data onto the attendance sheets of the İŞKUR portal and transfers 40+ pages."),
         savunma=("Defence Spending Data Analysis", "Correlogram, dumbbell and boxplot visualisations joining SIPRI military spending with World Bank indicators (R)."),
     ),
 )
