@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'redesign/**']
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '17 5 * * 1'   # haftalık: dış bağlantı denetimi
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-check:
+    name: Üretilen dosyalar güncel + HTML geçerli
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: tools/build.py --check
+        run: python3 tools/build.py --check
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: HTML doğrulama (html-validate)
+        run: npx --yes html-validate@9 index.html en/index.html 404.html
+
+  tests:
+    name: Regresyon, güvenlik, responsive, erişilebilirlik, performans
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: pip install -r requirements-dev.txt
+      - run: python -m playwright install --with-deps chromium
+      - name: pytest
+        run: python -m pytest -q
+      - name: Ekran görüntüleri (başarısızlıkta)
+        if: failure()
+        run: python3 tests/capture_screens.py shots
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: ekran-goruntuleri
+          path: shots
+          if-no-files-found: ignore
+          retention-days: 7
+
+  external-links:
+    name: Dış bağlantılar (yalnızca zamanlanmış / elle)
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-dev.txt
+      - run: CHECK_EXTERNAL=1 python -m pytest -q -m external

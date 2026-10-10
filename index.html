@@ -1,955 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kerem Efe Yiğit | Full-Stack & AI Yazılım Geliştirici</title>
-    <meta name="description" content="Kerem Efe Yiğit - Full-Stack Yazılım Geliştirici & AI / Bilgisayarlı Görü Mühendisi Portfolyosu ve Özgeçmişi.">
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --bg-dark: #0a0e17;
-            --bg-card: rgba(17, 24, 39, 0.75);
-            --bg-card-hover: rgba(24, 33, 53, 0.9);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --card-border-hover: rgba(99, 102, 241, 0.4);
-            --primary: #6366f1;
-            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-            --accent-cyan: #06b6d4;
-            --accent-emerald: #10b981;
-            --accent-amber: #f59e0b;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --text-dim: #6b7280;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 40%, rgba(139, 92, 246, 0.10) 0%, transparent 45%),
-                radial-gradient(circle at 50% 85%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
-        }
-
-        /* Header & Navigation */
-        header {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 1.8rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(12px);
-            background: rgba(10, 14, 23, 0.7);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.25s ease;
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        .nav-social-btn {
-            padding: 0.45rem 1rem;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid var(--card-border);
-            color: var(--text-main) !important;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.25s ease;
-        }
-
-        .nav-social-btn:hover {
-            background: rgba(99, 102, 241, 0.2);
-            border-color: var(--primary);
-            color: #fff !important;
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            max-width: 1000px;
-            margin: 4.5rem auto 5rem;
-            text-align: center;
-            padding: 0 1.5rem;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.45rem 1.2rem;
-            border-radius: 50px;
-            background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: #a5b4fc;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: 3.6rem;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            margin-bottom: 1.3rem;
-            line-height: 1.15;
-        }
-
-        .hero h1 span {
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 720px;
-            margin: 0 auto 2.5rem;
-            font-weight: 400;
-        }
-
-        .hero-actions {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.85rem 1.8rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--primary-gradient);
-            color: #fff;
-            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
-            border: none;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.6);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            border: 1px solid var(--card-border);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Section Layout */
-        section {
-            max-width: 1240px;
-            margin: 0 auto 6rem;
-            padding: 0 1.5rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-tag {
-            color: var(--accent-cyan);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            font-size: 1.05rem;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-box {
-            background: var(--bg-card);
-            border: 1px solid var(--card-border);
-            border-radius: 18px;
-            padding: 1.8rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .skill-box:hover {
-            border-color: var(--card-border-hover);
-            transform: translateY(-4px);
-        }
-
-        .skill-box-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .skill-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background: rgba(99, 102, 241, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: #818cf8;
-        }
-
-        .skill-box-header h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            font-size: 0.8rem;
-            padding: 0.3rem 0.7rem;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.04);
-            color: var(--text-main);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 2.2rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card.featured {
-            border-color: rgba(99, 102, 241, 0.35);
-        }
-
-        .card-top-tag {
-            position: absolute;
-            top: 18px;
-            right: 20px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 0.25rem 0.65rem;
-            border-radius: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        .tag-featured {
-            background: rgba(99, 102, 241, 0.2);
-            color: #a5b4fc;
-            border: 1px solid rgba(99, 102, 241, 0.4);
-        }
-
-        .project-card:hover {
-            transform: translateY(-6px);
-            background: var(--bg-card-hover);
-            border-color: var(--card-border-hover);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
-        }
-
-        .project-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            background: rgba(99, 102, 241, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            color: #818cf8;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-card h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-        }
-
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.55;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-            margin-bottom: 1.8rem;
-        }
-
-        .tech-tag {
-            font-size: 0.75rem;
-            font-weight: 500;
-            padding: 0.25rem 0.65rem;
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--accent-cyan);
-            border: 1px solid rgba(6, 182, 212, 0.2);
-        }
-
-        .project-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            padding-top: 1.2rem;
-            margin-top: auto;
-            gap: 0.8rem;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            color: #818cf8;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.88rem;
-            transition: all 0.2s;
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.25);
-        }
-
-        .project-link:hover {
-            color: #fff;
-            background: rgba(99, 102, 241, 0.25);
-            border-color: var(--primary);
-            gap: 0.65rem;
-        }
-
-        /* Badges for Public vs Private */
-        .repo-badge {
-            font-size: 0.76rem;
-            font-weight: 600;
-            padding: 0.35rem 0.75rem;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            white-space: nowrap;
-        }
-
-        .public-badge {
-            background: rgba(16, 185, 129, 0.12);
-            color: #34d399;
-            border: 1px solid rgba(16, 185, 129, 0.25);
-        }
-
-        .private-badge {
-            background: rgba(245, 158, 11, 0.12);
-            color: #fbbf24;
-            border: 1px solid rgba(245, 158, 11, 0.25);
-        }
-
-        .private-info-note {
-            font-size: 0.78rem;
-            color: var(--text-dim);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            font-weight: 500;
-        }
-
-        /* Experience / Highlights */
-        .experience-card {
-            background: var(--bg-card);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .exp-item {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .exp-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .exp-bullet {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #818cf8;
-            flex-shrink: 0;
-            margin-top: 0.2rem;
-        }
-
-        .exp-content h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .exp-content .exp-meta {
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            margin-bottom: 0.6rem;
-            font-weight: 500;
-        }
-
-        .exp-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.55;
-        }
-
-        /* Contact Section */
-        .contact-card {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 24px;
-            padding: 3.5rem 2rem;
-            text-align: center;
-            backdrop-filter: blur(12px);
-        }
-
-        .contact-card h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-card p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
-            font-size: 1.05rem;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 1.5rem;
-            border-top: 1px solid var(--card-border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #818cf8;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            header { padding: 1.2rem 1.5rem; }
-            nav { gap: 0.9rem; }
-            .hero h1 { font-size: 2.4rem; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .exp-item { flex-direction: column; gap: 0.8rem; }
-            .project-footer { flex-direction: column; align-items: flex-start; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kerem Efe Yiğit — Full-Stack &amp; Yapay Zeka Yazılım Geliştirici</title>
+<meta name="description" content="Kerem Efe Yiğit: kurumsal web sistemleri, bilgisayarlı görü ve çok ajanlı yapay zeka orkestrasyonu geliştiren yazılımcı. Seçilmiş çalışmalar, yaklaşım ve iletişim.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101215" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://keremefeyigit.github.io/">
+<link rel="alternate" hreflang="tr" href="https://keremefeyigit.github.io/">
+<link rel="alternate" hreflang="en" href="https://keremefeyigit.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://keremefeyigit.github.io/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kerem Efe Yiğit">
+<meta property="og:title" content="Kerem Efe Yiğit — Full-Stack &amp; Yapay Zeka Yazılım Geliştirici">
+<meta property="og:description" content="Kerem Efe Yiğit: kurumsal web sistemleri, bilgisayarlı görü ve çok ajanlı yapay zeka orkestrasyonu geliştiren yazılımcı. Seçilmiş çalışmalar, yaklaşım ve iletişim.">
+<meta property="og:url" content="https://keremefeyigit.github.io/">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:image" content="https://keremefeyigit.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kerem Efe Yiğit — Full-Stack &amp; Yapay Zeka Yazılım Geliştirici">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kerem Efe Yiğit — Full-Stack &amp; Yapay Zeka Yazılım Geliştirici">
+<meta name="twitter:description" content="Kerem Efe Yiğit: kurumsal web sistemleri, bilgisayarlı görü ve çok ajanlı yapay zeka orkestrasyonu geliştiren yazılımcı. Seçilmiş çalışmalar, yaklaşım ve iletişim.">
+<meta name="twitter:image" content="https://keremefeyigit.github.io/assets/img/og.png">
+<link rel="preload" href="/assets/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/theme.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kerem Efe Yiğit",
+  "url": "https://keremefeyigit.github.io/",
+  "jobTitle": "Full-Stack & Yapay Zeka Yazılım Geliştirici",
+  "inLanguage": "tr",
+  "sameAs": [
+    "https://github.com/keremefeyigit",
+    "https://www.linkedin.com/in/kerem-efe-yi%C4%9Fit/"
+  ],
+  "knowsAbout": [
+    "Computer vision",
+    "OpenCV",
+    "YOLOv8",
+    "PHP",
+    "Node.js",
+    "React",
+    "TypeScript",
+    "Multi-agent systems"
+  ]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">İçeriğe geç</a>
+<div class="shell">
+<header class="rail">
+  <div class="rail-top">
+    <div>
+      <a class="brand" href="/">Kerem Efe Yiğit</a>
+      <p class="role">Full-Stack &amp; Yapay Zeka Yazılım Geliştirici</p>
+    </div>
+    <div class="tools">
+      <a class="lang" href="/en/" hreflang="en" lang="en" title="English">EN</a>
+      <button class="theme" type="button" data-theme-toggle data-label-dark="Koyu tema" data-label-light="Açık tema" aria-label="Tema değiştir" aria-pressed="false" hidden>&#9680;</button>
+    </div>
+  </div>
+  <nav aria-label="Ana gezinme" data-nav><ol class="nav"><li><a href="#work"><span class="n">01</span>Çalışmalar</a></li><li><a href="#approach"><span class="n">02</span>Yaklaşım</a></li><li><a href="#skills"><span class="n">03</span>Yetenekler</a></li><li><a href="#contact"><span class="n">04</span>İletişim</a></li></ol></nav>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="kicker">Yazılım geliştirici</p>
+    <h1 id="hero-title">Kurumsal sistemler, bilgisayarlı görü ve yapay zeka ajanları.</h1>
+    <p class="lead">Web platformlarından uç cihaz çıkarımına kadar uçtan uca geliştiriyorum. İşi testle bitiririm: veri sızıntısı, kırık bağlantı ve yanıltıcı test gibi hataları sonradan değil, değişiklikten önce yakalamaya çalışırım.</p>
+    <p class="cta"><a class="btn" href="#work">Çalışmalara bak</a><a class="btn ghost" href="#contact">İletişime geç</a></p>
+    <div class="now"><p class="now-title">Şu an üzerinde çalıştıklarım</p><ul><li><strong>Agent Ofisi</strong> <span>— yerel çok ajanlı orkestrasyon, kural denetimi ve CI döngüsü</span></li><li><strong>YEMEDENÖNCE</strong> <span>— doğrulanmış esnaf keşfi için web ve mobil ürün</span></li><li><strong>Pano Hesaplama</strong> <span>— reklam panosu ölçümü için bilgisayarlı görü hattı</span></li></ul></div>
+  </section>
 
-    <!-- Header Navigation -->
-    <header>
-        <a href="#" class="logo">Kerem Efe Yiğit</a>
-        <nav>
-            <a href="#projects">Projeler</a>
-            <a href="#skills">Yetenekler</a>
-            <a href="#experience">Deneyim</a>
-            <a href="#contact">İletişim</a>
-            <a href="https://github.com/keremefeyigit" target="_blank" class="nav-social-btn"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/kerem-efe-yi%C4%9Fit/" target="_blank" class="nav-social-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        </nav>
-    </header>
+  <section id="work" aria-labelledby="work-title">
+    <h2 id="work-title"><span class="n">01</span>Seçilmiş çalışmalar</h2>
+    <p class="intro">Dört ana proje ve diğer çalışmalar. Kodu kapalı olanlar açıkça belirtilmiştir.</p>
+    <ol class="featured"><li class="proj" id="p-pano"><h3>Pano Hesaplama Sistemi</h3><p>Kentsel reklam panolarının boyutunu OpenCV ve YOLOv8 segmentasyonuyla ölçen; stereo mesafe analizi ve koordinat takibi yapan bilgisayarlı görü sistemi.</p><ul class="tags"><li>Python</li><li>YOLOv8</li><li>OpenCV</li><li>FastAPI</li><li>PyTorch</li><li>Docker</li></ul><p class="meta"><span class="vis open">Herkese açık kod · Lisans: CC BY-NC-ND 4.0</span><span class="links"><a href="https://github.com/keremefeyigit/PanoHesaplamaSistemi" rel="noopener noreferrer" target="_blank">Kaynak kod</a></span></p></li><li class="proj" id="p-yemedenonce"><h3>YEMEDENÖNCE</h3><p>Reklamlardan bağımsız, doğrulanmış esnaf lezzeti keşfi: Bayes istatistiği, Gemini ile duygu analizi ve H3 coğrafi indeksleme.</p><ul class="tags"><li>React 19</li><li>TypeScript</li><li>Gemini</li><li>H3</li><li>Supabase</li><li>Capacitor</li></ul><p class="meta"><span class="vis private">Özel · kod kapalı</span></p></li><li class="proj" id="p-asu"><h3>ASÜ Topluluk Platformu (ASÜConnect)</h3><p>49 tablolu kurumsal LAMP sistemi: SKS onay hiyerarşisi, HMAC-SHA256 imzalı QR biletleme ve rol tabanlı erişim. Ekip projesi.</p><ul class="tags"><li>PHP 8.4</li><li>MySQL/MariaDB</li><li>Custom MVC</li><li>HMAC-SHA256</li></ul><p class="meta"><span class="vis corporate">Kurumsal · kod kapalı</span></p></li><li class="proj" id="p-agent"><h3>Agent Ofisi (Agent Köyü)</h3><p>Claude ve agy ajanlarını hcom protokolüyle yöneten yerel orkestrasyon: anayasal kural denetimi, CI doğrulama döngüsü ve görev devri.</p><ul class="tags"><li>Python</li><li>Multi-agent</li><li>hcom</li><li>CI</li></ul><p class="meta"><span class="vis private">Özel · kod kapalı</span></p></li></ol>
+    <h3 class="more-title">Diğer çalışmalar</h3>
+    <ul class="more"><li id="p-siyos"><h3>Apartman Yönetim Sistemi (SIYOS)</h3><p>Sakin talepleri, aidat ve gider takibi; JWT, hız sınırı ve güvenlik başlıklarıyla Express ve SQLite üzerinde REST platformu.</p><ul class="tags"><li>Node.js</li><li>Express</li><li>SQLite</li><li>JWT</li></ul><p class="meta"><span class="vis open">Herkese açık kod · Lisans: MIT</span><span class="links"><a href="https://github.com/keremefeyigit/Apartman-Yonetim-Sistemi" rel="noopener noreferrer" target="_blank">Kaynak kod</a></span></p></li><li id="p-usip"><h3>USİP — Üniversite-Sanayi İşbirliği Portalı</h3><p>TTO, kariyer merkezleri, akademisyenler, öğrenciler ve firmaları buluşturan, AR-GE ve istihdam süreçlerini yöneten B2B/B2C portal (MVP).</p><ul class="tags"><li>PHP</li><li>Custom MVC</li><li>MySQL</li><li>Bootstrap 5</li></ul><p class="meta"><span class="vis corporate">Kurumsal · kod kapalı</span></p></li><li id="p-yds"><h3>YDS Kelime Oyunu</h3><p>YDS ve YÖKDİL için Oxford 3000 destekli, CEFR A1-C2 kademeli kelime oyunu. Electron ile Windows ve Linux masaüstü sürümü.</p><ul class="tags"><li>Electron</li><li>React</li><li>Vite</li><li>CEFR</li></ul><p class="meta"><span class="vis private">Özel · kod kapalı</span></p></li><li id="p-roket"><h3>Roket &amp; Radar Simülasyonu</h3><p>HTML5 Canvas ve 2D fizik ile gerçek zamanlı radar taraması, hedef kilitleme ve balistik uçuş.</p><ul class="tags"><li>HTML5 Canvas</li><li>JavaScript</li></ul><p class="meta"><span class="vis open">Herkese açık kod · Lisans: CC BY-NC-ND 4.0</span><span class="links"><a href="https://keremefeyigit.github.io/Roket-Oyunu/" rel="noopener noreferrer" target="_blank">Tarayıcıda oyna</a><a href="https://github.com/keremefeyigit/Roket-Oyunu" rel="noopener noreferrer" target="_blank">Kaynak kod</a></span></p></li><li id="p-sabikali"><h3>Sabıkalı Patiler</h3><p>İpuçlarını birleştirerek suçluyu bulduğunuz, saf JavaScript ile yazılmış tek dosyalık dedektiflik oyunu.</p><ul class="tags"><li>HTML5</li><li>CSS3</li><li>Vanilla JS</li></ul><p class="meta"><span class="vis open">Herkese açık kod · Lisans: CC BY-NC-ND 4.0</span><span class="links"><a href="https://keremefeyigit.github.io/Sabikali-Patiler/" rel="noopener noreferrer" target="_blank">Tarayıcıda oyna</a><a href="https://github.com/keremefeyigit/Sabikali-Patiler" rel="noopener noreferrer" target="_blank">Kaynak kod</a></span></p></li><li id="p-kalite"><h3>Kalite Elçisi</h3><p>YÖKAK kalite güvence standartlarını interaktif senaryolarla öğreten, tarayıcının ES modülleriyle çalışan bağımlılıksız oyun motoru.</p><ul class="tags"><li>Vanilla JS</li><li>ES Modules</li><li>JSON</li></ul><p class="meta"><span class="vis corporate">Kurumsal · kod kapalı</span></p></li><li id="p-iskur"><h3>İŞKUR Portal Otomasyon Botu</h3><p>Excel yoklama verilerini İŞKUR portalındaki devam çizelgelerine eşleyen ve 40+ sayfayı aktaran Python otomasyonu.</p><ul class="tags"><li>Python</li><li>Selenium</li><li>openpyxl</li></ul><p class="meta"><span class="vis private">Özel · kod kapalı</span></p></li><li id="p-savunma"><h3>Savunma Harcaması Veri Analizi</h3><p>SIPRI askeri harcamaları ile Dünya Bankası göstergelerini birleştiren korelogram, dumbbell ve boxplot görselleştirmeleri (R).</p><ul class="tags"><li>R</li><li>ggcorrplot</li><li>Spearman</li></ul><p class="meta"><span class="vis open">Herkese açık kod</span><span class="links"><a href="https://yusakru.github.io/asu-savunma-harcamalari-veri-gorsellestirme/" rel="noopener noreferrer" target="_blank">Canlı rapor</a></span></p></li></ul>
+  </section>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <span class="badge"><i class="fas fa-sparkles"></i> Full-Stack & AI Yazılım Geliştirici</span>
-            <h1>Yüksek Performanslı Sistemler, <span>Yapay Zeka & Görü İşleme</span></h1>
-            <p>Büyük ölçekli web mimarileri, derin öğrenme tabanlı bilgisayarlı görü sistemleri, otonom AI ajan orkestrasyonu ve mobil platformlar geliştiriyorum.</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary"><i class="fas fa-grid-2"></i> Projeleri İncele</a>
-                <a href="https://github.com/keremefeyigit" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub Profilim</a>
-                <a href="https://www.linkedin.com/in/kerem-efe-yi%C4%9Fit/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            </div>
-        </section>
+  <section id="approach" aria-labelledby="approach-title">
+    <h2 id="approach-title"><span class="n">02</span>Nasıl çalışırım</h2>
+    <ol class="principles"><li><h3>Güvenlik tasarımın parçası</h3><p>Parolalar bcrypt ile özetlenir, biletler HMAC-SHA256 ile imzalanır, sorgular hazırlanmış ifadelerle yazılır, istekler hız sınırına tabidir. Gizli bilgi koda ve git geçmişine girmesin diye tarama ve .gitignore kuralları kullanırım.</p></li><li><h3>Ölçülebilir görü sistemleri</h3><p>Stereo kamera kalibrasyonu, YOLOv8 segmentasyonu ve OpenCV koordinat dönüşümleriyle ölçüm yapan; uç cihazda çalışabilen çıkarım hatları kurarım.</p></li><li><h3>Denetimli ajanlar</h3><p>LLM ajanlarını kurallarla çalıştırırım: ajan merge etmez, sır okumaz, her değişiklik testten geçer, kararlar insanda kalır.</p></li><li><h3>Testle bitirmek</h3><p>Regresyon, responsive, erişilebilirlik ve güvenlik testleri her değişiklikte çalışır. Test kırmızıyken iş bitmiş sayılmaz.</p></li></ol>
+  </section>
 
-        <!-- Technical Skills Section -->
-        <section id="skills">
-            <div class="section-header">
-                <span class="section-tag">YETENEK MATRİSİ</span>
-                <h2>Teknolojiler & Uzmanlıklar</h2>
-                <p>Uçtan uca ürün geliştirme süreçlerinde aktif kullandığım diller, çerçeveler ve araçlar.</p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-box">
-                    <div class="skill-box-header">
-                        <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                        <h3>AI & Bilgisayarlı Görü</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">OpenCV</span>
-                        <span class="skill-tag">YOLOv8 (Seg/Det)</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Gemini 2.5 API</span>
-                        <span class="skill-tag">Multi-Agent (hcom)</span>
-                        <span class="skill-tag">Duygu Analizi</span>
-                        <span class="skill-tag">Stereo Vision</span>
-                    </div>
-                </div>
+  <section id="skills" aria-labelledby="skills-title">
+    <h2 id="skills-title"><span class="n">03</span>Yetenekler</h2>
+    <div class="skills"><div><h3>Yapay zeka &amp; görü</h3><ul><li>OpenCV</li><li>YOLOv8 (Seg/Det)</li><li>PyTorch</li><li>Gemini API</li><li>Multi-agent (hcom)</li><li>Stereo vision</li></ul></div><div><h3>Backend</h3><ul><li>PHP 8.4 (MVC)</li><li>Node.js / Express</li><li>FastAPI</li><li>REST</li><li>HMAC / bcrypt</li><li>Rate limiting</li></ul></div><div><h3>Frontend &amp; mobil</h3><ul><li>React 19</li><li>TypeScript</li><li>Vite</li><li>Capacitor</li><li>HTML5 Canvas</li><li>Tailwind / CSS3</li></ul></div><div><h3>Veri &amp; DevOps</h3><ul><li>MySQL / MariaDB</li><li>PostgreSQL / Supabase</li><li>SQLite</li><li>Docker</li><li>Git / GitHub Actions</li><li>Linux / Bash</li></ul></div></div>
+  </section>
 
-                <div class="skill-box">
-                    <div class="skill-box-header">
-                        <div class="skill-icon"><i class="fas fa-server"></i></div>
-                        <h3>Backend & Mimariler</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PHP 8.4 (MVC)</span>
-                        <span class="skill-tag">Node.js / Express</span>
-                        <span class="skill-tag">FastAPI (Python)</span>
-                        <span class="skill-tag">RESTful API</span>
-                        <span class="skill-tag">HMAC / BCRYPT</span>
-                        <span class="skill-tag">Rate Limiting</span>
-                        <span class="skill-tag">Microservices</span>
-                    </div>
-                </div>
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title"><span class="n">04</span>İletişim</h2>
+    <p class="intro">Proje, iş birliği veya teknik danışmanlık için yazabilirsiniz.</p>
+    <a class="contact-mail" href="#contact" data-mail-user="keremefeyigit" data-mail-domain="outlook.com">keremefeyigit [at] outlook.com</a>
+    <p class="contact-links">
+      <a href="https://www.linkedin.com/in/kerem-efe-yi%C4%9Fit/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+      <a href="https://github.com/keremefeyigit" rel="noopener noreferrer" target="_blank">GitHub</a>
+    </p>
+  </section>
 
-                <div class="skill-box">
-                    <div class="skill-box-header">
-                        <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
-                        <h3>Frontend & Mobil</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React 19</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Vite</span>
-                        <span class="skill-tag">Capacitor Mobile</span>
-                        <span class="skill-tag">HTML5 Canvas</span>
-                        <span class="skill-tag">Tailwind / CSS3</span>
-                        <span class="skill-tag">ES Modülleri</span>
-                    </div>
-                </div>
-
-                <div class="skill-box">
-                    <div class="skill-box-header">
-                        <div class="skill-icon"><i class="fas fa-database"></i></div>
-                        <h3>Veri & DevOps</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MySQL / MariaDB</span>
-                        <span class="skill-tag">PostgreSQL / Supabase</span>
-                        <span class="skill-tag">SQLite3</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git / GitHub CI</span>
-                        <span class="skill-tag">Linux / Bash</span>
-                        <span class="skill-tag">R (ggcorrplot)</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Showcase -->
-        <section id="projects">
-            <div class="section-header">
-                <span class="section-tag">PORTFOLYO</span>
-                <h2>Öne Çıkan Projeler</h2>
-                <p>Gerçek dünya problemlerini çözen, açık kaynak ve kurumsal/özel geliştirilmiş sistemler.</p>
-            </div>
-            <div class="projects-grid">
-
-                <!-- PANO HESAPLAMA SİSTEMİ (PUBLIC) -->
-                <div class="project-card featured">
-                    <span class="card-top-tag tag-featured">Öne Çıkan</span>
-                    <div>
-                        <div class="project-icon"><i class="fas fa-camera"></i></div>
-                        <h3>Pano Hesaplama Sistemi</h3>
-                        <p>Kentsel reklam alanlarının denetimi için OpenCV ve YOLOv8 segmentasyon tabanlı; milimetrik boyut tespiti, stereo mesafe analizi ve koordinat takibi yapan yapay zeka ekosistemi.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">YOLOv8</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <a href="https://github.com/keremefeyigit/PanoHesaplamaSistemi" target="_blank" class="project-link"><i class="fab fa-github"></i> Depoyu İncele <i class="fas fa-arrow-up-right-from-square"></i></a>
-                        <span class="repo-badge public-badge"><i class="fas fa-globe"></i> Açık Kaynak</span>
-                    </div>
-                </div>
-
-                <!-- YEMEDENÖNCE (PRIVATE) -->
-                <div class="project-card featured">
-                    <span class="card-top-tag tag-featured">Öne Çıkan</span>
-                    <div>
-                        <div class="project-icon"><i class="fas fa-utensils"></i></div>
-                        <h3>YEMEDENÖNCE</h3>
-                        <p>Google Maps reklamlarından bağımsız; Bayes istatistiği, Gemini 2.5 Flash duygu analizi ve H3 coğrafi indeksleme ile doğrulanmış esnaf lezzeti keşif platformu.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">React 19</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Gemini AI</span>
-                            <span class="tech-tag">H3 Geo</span>
-                            <span class="tech-tag">Supabase</span>
-                            <span class="tech-tag">Capacitor</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <span class="repo-badge private-badge"><i class="fas fa-lock"></i> Özel Girişim / Ticari</span>
-                        <span class="private-info-note"><i class="fas fa-shield"></i> Kodlar Gizlidir</span>
-                    </div>
-                </div>
-
-                <!-- ASÜ TOPLULUK PLATFORMU (PRIVATE / ENTERPRISE) -->
-                <div class="project-card featured">
-                    <span class="card-top-tag tag-featured">Öne Çıkan</span>
-                    <div>
-                        <div class="project-icon"><i class="fas fa-users-gear"></i></div>
-                        <h3>ASÜ Topluluk Platformu (ASÜConnect)</h3>
-                        <p>49 veritabanı tablosu üzerinde çalışan; SKS onay hiyerarşisi (araç, salon, stand, malzeme), HMAC-SHA256 imzalı QR biletleme ve rol tabanlı erişim kontrolü sağlayan kurumsal LAMP sistemi.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">PHP 8.4</span>
-                            <span class="tech-tag">MySQL/MariaDB</span>
-                            <span class="tech-tag">Custom MVC</span>
-                            <span class="tech-tag">HMAC Bilet</span>
-                            <span class="tech-tag">CSRF/BCRYPT</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <span class="repo-badge private-badge"><i class="fas fa-lock"></i> Kurumsal / Üniversite</span>
-                        <span class="private-info-note"><i class="fas fa-university"></i> Üniversite İçi Sistem</span>
-                    </div>
-                </div>
-
-                <!-- APARTMAN YÖNETİM SİSTEMİ (PUBLIC) -->
-                <div class="project-card">
-                    <div>
-                        <div class="project-icon"><i class="fas fa-building"></i></div>
-                        <h3>Apartman Yönetim Sistemi</h3>
-                        <p>Daire sakinleri, aidat takibi ve apartman giderleri için geliştirilmiş; JWT tabanlı, rate-limiting ve güvenlik başlıklarıyla sertleştirilmiş RESTful Express.js & SQLite platformu.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express.js</span>
-                            <span class="tech-tag">SQLite3</span>
-                            <span class="tech-tag">JWT</span>
-                            <span class="tech-tag">Rate-Limit</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <a href="https://github.com/keremefeyigit/Apartman-Yonetim-Sistemi" target="_blank" class="project-link"><i class="fab fa-github"></i> Depoyu İncele <i class="fas fa-arrow-up-right-from-square"></i></a>
-                        <span class="repo-badge public-badge"><i class="fas fa-globe"></i> Açık Kaynak</span>
-                    </div>
-                </div>
-
-                <!-- AGENT KÖYÜ / OFİSİ (PRIVATE / RESEARCH) -->
-                <div class="project-card">
-                    <div>
-                        <div class="project-icon"><i class="fas fa-robot"></i></div>
-                        <h3>Agent Ofisi (Agent Köyü)</h3>
-                        <p>Otonom LLM ajanlarını (Claude & agy) hcom protokolü üzerinden bir köy gibi yöneten, anayasal kural denetimi, CI/CD doğrulama döngüsü ve görev devri sağlayan ajan orkestrasyon motoru.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Multi-Agent</span>
-                            <span class="tech-tag">hcom Protocol</span>
-                            <span class="tech-tag">CI Otomasyonu</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <span class="repo-badge private-badge"><i class="fas fa-lock"></i> Özel Ar-Ge Projesi</span>
-                        <span class="private-info-note"><i class="fas fa-microchip"></i> Yerel Orkestrasyon</span>
-                    </div>
-                </div>
-
-                <!-- USİP (PRIVATE / ENTERPRISE) -->
-                <div class="project-card">
-                    <div>
-                        <div class="project-icon"><i class="fas fa-handshake"></i></div>
-                        <h3>USİP (Üniversite-Sanayi İşbirliği)</h3>
-                        <p>TTO, Kariyer Merkezleri, akademisyenler, öğrenciler ve sanayi firmalarını buluşturan; AR-GE ve istihdam süreçlerini yöneten B2B/B2C kurumsal portal.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Native PHP</span>
-                            <span class="tech-tag">Custom MVC</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Bootstrap 5</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <span class="repo-badge private-badge"><i class="fas fa-lock"></i> B2B Kurumsal Proje</span>
-                        <span class="private-info-note"><i class="fas fa-briefcase"></i> Sözleşmeli Geliştirme</span>
-                    </div>
-                </div>
-
-                <!-- HTML5 ROKET & RADAR OYUNU (PUBLIC) -->
-                <div class="project-card">
-                    <div>
-                        <div class="project-icon"><i class="fas fa-gamepad"></i></div>
-                        <h3>HTML5 Roket & Radar Simülasyonu</h3>
-                        <p>HTML5 Canvas ve matematiksel fizik motoru ile geliştirilmiş gerçek zamanlı radar taraması, hedef kilitlenme ve balistik uçuş simülasyonu oyunu.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">HTML5 Canvas</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Physics Engine</span>
-                            <span class="tech-tag">Math & Geometry</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <a href="https://github.com/keremefeyigit/Roket-Oyunu" target="_blank" class="project-link"><i class="fab fa-github"></i> Depoyu İncele <i class="fas fa-arrow-up-right-from-square"></i></a>
-                        <span class="repo-badge public-badge"><i class="fas fa-gamepad"></i> Açık Kaynak</span>
-                    </div>
-                </div>
-
-                <!-- SABIKALI PATİLER (PUBLIC) -->
-                <div class="project-card">
-                    <div>
-                        <div class="project-icon"><i class="fas fa-cat"></i></div>
-                        <h3>Sabıkalı Patiler</h3>
-                        <p>Kullanıcı dostu arayüzü, akıcı CSS animasyonları ve saf JavaScript oyun dinamikleri ile hazırlanan etkileşimli web oyunu.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3 Animations</span>
-                            <span class="tech-tag">Vanilla JS</span>
-                            <span class="tech-tag">Game Logic</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <a href="https://github.com/keremefeyigit/Sabikali-Patiler" target="_blank" class="project-link"><i class="fab fa-github"></i> Depoyu İncele <i class="fas fa-arrow-up-right-from-square"></i></a>
-                        <span class="repo-badge public-badge"><i class="fas fa-gamepad"></i> Açık Kaynak</span>
-                    </div>
-                </div>
-
-                <!-- KALİTE ELÇİSİ (PRIVATE / UNIVERSITY) -->
-                <div class="project-card">
-                    <div>
-                        <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <h3>Kalite Elçisi · Görsel Roman Motoru</h3>
-                        <p>YÖKAK kalite güvence standartlarını öğrencilere interaktif senaryolarla öğreten, tarayıcının yerel ES Modülleri ile çalışan bağımlılıksız oyun motoru.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Vanilla JS</span>
-                            <span class="tech-tag">ES Modules</span>
-                            <span class="tech-tag">JSON Engine</span>
-                            <span class="tech-tag">Oyunlaştırma</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <span class="repo-badge private-badge"><i class="fas fa-lock"></i> Kurumsal / YÖKAK Projesi</span>
-                        <span class="private-info-note"><i class="fas fa-school"></i> Üniversite İçi</span>
-                    </div>
-                </div>
-
-                <!-- İŞKUR PORTAL OTOMASYONU (PRIVATE / INTERNAL) -->
-                <div class="project-card">
-                    <div>
-                        <div class="project-icon"><i class="fas fa-bolt"></i></div>
-                        <h3>İŞKUR Portal Otomasyon Botu</h3>
-                        <p>Excel tablolarındaki çoklu şube yoklama verilerini İŞKUR Portal'ın devam çizelgelerine otomatik eşleyen ve 40+ sayfayı hatasız aktaran Python otomasyon sistemi.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Selenium</span>
-                            <span class="tech-tag">openpyxl</span>
-                            <span class="tech-tag">Web Scraping</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <span class="repo-badge private-badge"><i class="fas fa-lock"></i> Kurum İçi Otomasyon</span>
-                        <span class="private-info-note"><i class="fas fa-shield"></i> Dahili Kullanım</span>
-                    </div>
-                </div>
-
-                <!-- VERİ GÖRSELLEŞTİRME & ANALİZ (LIVE REPORT) -->
-                <div class="project-card">
-                    <div>
-                        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                        <h3>Savunma Harcaması Veri Analizi</h3>
-                        <p>SIPRI askeri harcamaları ile Dünya Bankası sosyoekonomik göstergelerini birleştiren korelogram (ggcorrplot, Spearman), dumbbell ve boxplot veri görselleştirme projesi.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">R 4.x</span>
-                            <span class="tech-tag">ggcorrplot</span>
-                            <span class="tech-tag">Spearman</span>
-                            <span class="tech-tag">Veri Bilimi</span>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <a href="https://yusakru.github.io/asu-savunma-harcamas--veriGorsel/" target="_blank" class="project-link"><i class="fas fa-chart-pie"></i> Canlı Raporu Aç <i class="fas fa-arrow-up-right-from-square"></i></a>
-                        <span class="repo-badge public-badge"><i class="fas fa-globe"></i> Canlı Analiz</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Experience & Architecture -->
-        <section id="experience">
-            <div class="section-header">
-                <span class="section-tag">DENEYİM & MİMARİ</span>
-                <h2>Sistem & Geliştirme Yaklaşımı</h2>
-                <p>Güvenlik, ölçeklenebilirlik ve sürdürülebilir kod prensipleri.</p>
-            </div>
-            <div class="experience-card">
-                <div class="exp-item">
-                    <div class="exp-bullet"><i class="fas fa-shield-halved"></i></div>
-                    <div class="exp-content">
-                        <h4>Güvenlik Odaklı Backend & Veritabanı Tasarımı</h4>
-                        <div class="exp-meta">BCRYPT · HMAC-SHA256 İmzalı Biletler · PDO Prepared Statements · Rate Limiting</div>
-                        <p>Sistemlerimde kullanıcı verisi güvenliği ve yetkilendirme katmanları en baştan tasarlanır. SQL enjeksiyonu, XSS ve CSRF açıklarına karşı tam korumalı mimari; bilet ve oturum yönetiminde kriptografik imzalama mekanizmaları kullanılır.</p>
-                    </div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-bullet"><i class="fas fa-microchip"></i></div>
-                    <div class="exp-content">
-                        <h4>Derin Öğrenme & Edge Pipeline Optimizasyonu</h4>
-                        <div class="exp-meta">YOLOv8 Segmentation · OpenCV Koordinat Dönüşümleri · FastAPI Asenkron Akış</div>
-                        <p>Görüntü işleme modellerinin gerçek dünya ortamlarında (örneğin akıllı şehir reklam panosu ölçümü) milimetrik hassasiyet ve minimum gecikmeyle çalışabilmesi için stereo kamera kalibrasyonu ve edge inference boru hatları kuruyorum.</p>
-                    </div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-bullet"><i class="fas fa-cubes"></i></div>
-                    <div class="exp-content">
-                        <h4>Modern Frontend & Otonom AI Ekosistemleri</h4>
-                        <div class="exp-meta">React 19 · TypeScript · Multi-Agent Orchestration · Gemini 2.5 AI</div>
-                        <p>En güncel frontend teknolojileriyle (React 19, Vite, Capacitor) akıcı kullanıcı deneyimleri oluştururken, LLM ajanlarının güvenli, denetimli ve işbirlikçi biçimde çalışmasını sağlayan otonom orkestrasyon protokolleri geliştiriyorum.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="contact-card">
-                <h2>Birlikte Çalışalım</h2>
-                <p>Projeler, teknik danışmanlık veya yeni iş fırsatları için dilediğiniz zaman iletişime geçebilirsiniz.</p>
-                <div class="contact-links">
-                    <a href="mailto:keremefeyigit@outlook.com" class="btn btn-primary"><i class="fas fa-envelope"></i> keremefeyigit@outlook.com</a>
-                    <a href="https://www.linkedin.com/in/kerem-efe-yi%C4%9Fit/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn Profili</a>
-                    <a href="https://github.com/keremefeyigit" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub (@keremefeyigit)</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Kerem Efe Yiğit · Tüm hakları saklıdır · <a href="https://keremefeyigit.github.io">keremefeyigit.github.io</a></p>
-    </footer>
-
+  <footer>
+    <span>© 2026 Kerem Efe Yiğit</span>
+    <span>Sayfa kaynak kodu MIT lisanslıdır.</span>
+    <a href="https://github.com/keremefeyigit/keremefeyigit.github.io" rel="noopener noreferrer" target="_blank">Kaynak kod</a>
+  </footer>
+</main>
+</div>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>
