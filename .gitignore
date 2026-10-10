@@ -1,0 +1,30 @@
+# Sırlar ve yerel ayarlar: asla commit'lenmez
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.db
+*.sqlite
+*.sqlite3
+*.pid
+settings.local.json
+.claude/settings.local.json
+
+# Araç çıktıları
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+test-results/
+playwright-report/
+.venv/
+venv/
+
+# Editör / işletim sistemi
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
