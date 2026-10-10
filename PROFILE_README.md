@@ -1,7 +1,7 @@
 <div align="center">
 
 # Merhaba, Ben Kerem Efe Yiğit 👋
-### Full-Stack Software Developer & AI / Computer Vision Engineer
+### Full-Stack & AI Developer · Yönetim Bilişim Sistemleri öğrencisi
 
 [![Website](https://img.shields.io/badge/Portfolyo-keremefeyigit.github.io-6366f1?style=for-the-badge&logo=google-chrome&logoColor=white)](https://keremefeyigit.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-kerem--efe--yiğit-0077b5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kerem-efe-yi%C4%9Fit/)
