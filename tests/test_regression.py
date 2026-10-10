@@ -214,6 +214,12 @@ def test_gizli_proje_sitede_yok():
         assert not re.search(r"i[şs]kur", read(rel), re.I), rel
 
 
+def test_engineer_ifadesi_yok():
+    """Unvan olarak 'engineer/mühendis' kullanılmaz (YBS öğrencisi: 'geliştirici')."""
+    for rel in ("index.html", "en/index.html", "tools/content.py", "README.md", "PROFILE_README.md"):
+        assert not re.search(r"engineer|m[üu]hendis", read(rel), re.I), rel
+
+
 # ---------- Statik dosyalar ----------
 def test_sitemap_robots_404():
     sm = read("sitemap.xml")
