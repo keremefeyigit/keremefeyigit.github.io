@@ -35,7 +35,7 @@ DevOps & Araçlar: Docker, Git, GitHub Actions (CI/CD), Linux (Ubuntu/Debian), N
 
 ---
 
-### 🌟 Açık Kaynak Projeler
+### 🌟 Herkese Açık Projeler
 
 - **[Pano Hesaplama Sistemi](https://github.com/keremefeyigit/PanoHesaplamaSistemi)** — Reklam panolarının milimetrik boyutunu ve koordinatlarını hesaplayan yapay zeka sistemi (`YOLOv8`, `OpenCV`, `FastAPI`, `Docker`).
 - **[Apartman Yönetim Sistemi](https://github.com/keremefeyigit/Apartman-Yonetim-Sistemi)** — Güvenlik sertleştirmeli (Helmet, Rate-limiting, JWT) daire ve aidat yönetim REST API platformu (`Node.js`, `Express`, `SQLite3`).
