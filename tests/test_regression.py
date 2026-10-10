@@ -207,6 +207,13 @@ def test_project_visibility_labels_are_consistent():
             assert p["links"], p["id"]
 
 
+def test_gizli_proje_sitede_yok():
+    """Gizli tutulacak projeler (İŞKUR botu) içerik kaynağında ve üretilen sayfalarda hiç geçmemeli."""
+    assert "iskur" not in {p["id"] for p in C.PROJECTS}
+    for rel in ("index.html", "en/index.html", "tools/content.py", "README.md", "PROFILE_README.md", "sitemap.xml"):
+        assert not re.search(r"i[şs]kur", read(rel), re.I), rel
+
+
 # ---------- Statik dosyalar ----------
 def test_sitemap_robots_404():
     sm = read("sitemap.xml")
