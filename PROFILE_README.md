@@ -16,7 +16,7 @@
 ---
 
 ### ⚡ Hakkımda & Odak Alanlarım
-- 🔭 **Aktif Projeler:** [PanoHesaplamaSistemi](https://github.com/keremefeyigit/PanoHesaplamaSistemi) (YOLOv8 + OpenCV), YEMEDENÖNCE (React 19 + Gemini 2.5 Flash), ASÜ Topluluk Platformu (PHP 8.4 LAMP).
+- 🔭 **Aktif Projeler:** [PanoHesaplamaSistemi](https://github.com/keremefeyigit/PanoHesaplamaSistemi) (YOLOv8 + OpenCV), YEMEDENÖNCE (React 19 + Gemini), İçerik Fabrikası (Claude Code + Telegram), ASÜ Topluluk Platformu (PHP 8.4 LAMP).
 - 🧠 **İlgi Alanları:** Uçtan uca mikroservisler, otonom AI ajan protokolleri (`hcom`), edge computer vision modelleri ve yüksek güvenlikli web mimarileri.
 - 💬 **İletişim:** Yeni projeler, işbirlikleri ve teknik danışmanlık için LinkedIn veya e-posta üzerinden ulaşabilirsiniz.
 
@@ -39,8 +39,6 @@ DevOps & Araçlar: Docker, Git, GitHub Actions (CI/CD), Linux (Ubuntu/Debian), N
 
 - **[Pano Hesaplama Sistemi](https://github.com/keremefeyigit/PanoHesaplamaSistemi)** — Reklam panolarının milimetrik boyutunu ve koordinatlarını hesaplayan yapay zeka sistemi (`YOLOv8`, `OpenCV`, `FastAPI`, `Docker`).
 - **[Apartman Yönetim Sistemi](https://github.com/keremefeyigit/Apartman-Yonetim-Sistemi)** — Güvenlik sertleştirmeli (Helmet, Rate-limiting, JWT) daire ve aidat yönetim REST API platformu (`Node.js`, `Express`, `SQLite3`).
-- **[HTML5 Roket & Radar Oyunu](https://github.com/keremefeyigit/Roket-Oyunu)** — Canvas ve 2D fizik motoru tabanlı etkileşimli radar simülasyon oyunu.
-- **[Sabıkalı Patiler](https://github.com/keremefeyigit/Sabikali-Patiler)** — Akıcı CSS animasyonları ve saf JavaScript oyun dinamikleri ile interaktif web oyunu.
 
 ---
 
